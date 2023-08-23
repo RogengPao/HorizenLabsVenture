@@ -1,0 +1,622 @@
+* {
+    font-family: monospace
+}
+
+body {
+    margin: 0;
+    background-color: rgba(22, 22, 22, 255);
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    color: white;
+}
+
+/* utils CSS */
+.pages-padding {
+    padding: 5rem 3rem;
+}
+
+/* utils CSS */
+
+/* header CSS */
+#header {
+    width: 100vw;
+    position: fixed;
+    z-index: 99;
+}
+
+.header-container {
+    position: relative;
+    width: 100%;
+}
+
+.blur-container {
+    left: 0;
+    top: 0;
+    right: 0;
+    position: absolute;
+    backdrop-filter: blur(16px);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.nav-container {
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-left: 2.5rem;
+}
+
+.nav-link:hover i {
+    color: rgba(255, 128, 132, 1);
+    transition: ease-in-out 0.3s;
+    transform: translateY(-0.15rem);
+}
+
+.contact-us-btn {
+    border: none;
+    border-radius: 100px;
+    height: 3.5rem;
+    width: 11.5rem;
+    padding: 5% 15%;
+
+    font-size: 1.1rem;
+    font-weight: lighter;
+    text-transform: uppercase;
+
+    background: linear-gradient(20deg, rgba(255, 128, 132, 1) 0%, rgba(97, 70, 255, 1) 100%);
+    background-blend-mode: overlay;
+}
+
+.contact-us-btn:hover {
+    transition: ease-in-out 0.15s;
+    transform: scale(1.075);
+}
+
+/* header CSS */
+
+/* homepage CSS */
+#homepage {
+    padding-top: 12rem;
+    text-align: center;
+    letter-spacing: 3px;
+
+}
+
+#homepage h1 {
+    font-size: 4.5rem;
+    margin: 0rem 0 3rem 0;
+}
+
+#homepage p {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+/* homepage CSS */
+
+.sad-auto-slider {
+    position: relative;
+    width: 50%;
+    margin: 0 auto 5rem auto;
+    overflow: hidden;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+
+    width: fit-content;
+    animation: slide 25s linear infinite;
+}
+
+.logos::-webkit-scrollbar {
+    display: none;
+}
+
+.logos img {
+    margin-right: 8.5rem;
+}
+
+.fading {
+    position: absolute;
+    background-image: linear-gradient(90deg, #161616fa 35%, rgba(18, 18, 18, 0.0));
+    z-index: 1;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.fading.right {
+    left: auto;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+@keyframes slide {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(-75%);
+    }
+}
+
+
+.wheel-spinning img {
+    position: relative;
+    width: clamp(10rem, 70%, 55rem);
+    z-index: -3;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spining-wheel.animation {
+    animation: rotate linear 20s infinite;
+}
+
+.mountain-bg {
+    position: relative;
+    bottom: 33.5rem;
+    z-index: -2;
+}
+
+.mountain-bg img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+}
+
+
+/* we advice css */
+#we-advise,
+#we-build,
+#we-invest,
+#we-connect {
+    position: relative;
+    z-index: 3;
+    display: flex;
+
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10rem;
+}
+
+
+.animation-container {
+    position: relative;
+}
+
+#we-advice-animation {
+    border: solid 1px white;
+    padding: 4rem;
+    background: transparent;
+}
+
+.main-box {
+    width: 17rem;
+    height: 17rem;
+    background: linear-gradient(20deg, rgba(255, 128, 132, 1) 0%, rgba(97, 70, 255, 1) 100%);
+}
+
+.gradient-left,
+.gradient-right {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.gradient-left {
+    bottom: 0;
+    left: 0;
+}
+
+.gradient-right {
+    top: 0;
+    right: 0;
+}
+
+
+.animation-container:hover .main-box {
+    transition: linear 1s;
+    scale: 1.1;
+}
+
+.active-now > .animation-success-1 {
+    transition: linear 1s;
+    transform: translate(-10rem, 10rem);
+    opacity: 1;
+}
+
+.active-now > .animation-success-2 {
+    transition: linear 0.5s;
+    transform: translate(-5rem, 5rem);
+    opacity: 1;
+}
+
+.active-now > .animation-success-3 {
+    transition: linear 0.5s;
+    transform: translate(5rem, -5rem);
+    opacity: 1;
+}
+
+.active-now > .animation-success-4 {
+    transition: linear 1s;
+    transform: translate(10rem, -10rem);
+    opacity: 1;
+}
+
+
+.we-advice-text,
+.we-build-text,
+.we-invest-text {
+    width: clamp(25rem, 70%, 45rem);
+    text-align: justify;
+    z-index: 99;
+}
+
+.we-advice-text h1,
+.we-build-text h1,
+.we-invest-text h1 {
+    font-size: 5rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+
+.we-advice-text p,
+.we-build-text p,
+.we-invest-text p {
+    font-size: 1.35rem;
+    line-height: 2rem;
+}
+
+
+#team-members {
+    text-align: center;
+    font-weight: 300;
+    padding: 0 12.5rem;
+    margin-bottom: 15rem;
+}
+
+#team-members h1 {
+    font-size: 5rem;
+}
+
+#team-members p {
+    font-size: 2.3rem;
+}
+
+.main-team-members, .other-members {
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.m-team-members {
+    max-width: 100%;
+
+}
+
+
+
+/* footer css */
+#footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    z-index: 3;
+}
+
+
+
+#footer img {
+    width: 5rem;
+}
+
+.animation2-container {
+    height: 21rem;
+    width: 21rem;
+    border: solid 1px white;
+    position: relative;
+    isolation: isolate;
+    z-index: 2;
+    border-collapse: collapse;
+    margin: 10rem 0;
+}
+
+.animation2-container img {
+    height: 100%;
+    width: 100%;
+}
+
+.border {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: transparent;
+    border: solid 1px white;
+    z-index: 3;
+}
+
+.a2-gradient {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.a2-gradient.lg-gradient {
+    bottom: 0;
+    left: 0;
+}
+
+.a2-gradient.sm-gradient {
+    right: 160px;
+    bottom: 0px;
+}
+
+.active-now > .animation2-success-1 {
+    transition: linear 1s;
+    transform: translate(-5rem, 5rem);
+}
+
+.active-now > .animation2-success-2 {
+    transition: linear 1s;
+    transform: translate(5rem, -5rem);
+}
+
+.active-now > .animation2-success-3 {
+    transition: linear 1s;
+    transform: translateY(10.9rem);
+    opacity: 0.5;
+}
+
+.active-now > .animation2-success-4 {
+    transition: linear 1s;
+    transform: translateY(12.5rem);
+    opacity: 0.5;
+}
+
+/* animation 3  */
+.a3-main-container {
+    position: relative;
+    margin: 12rem 0;
+}
+
+.animation3-container {
+    position: relative;
+    border: solid 1px white;
+    rotate: 45deg;
+
+}
+
+.a3-color {
+    height: 14.5rem;
+    width: 14.5rem;
+    margin: 3.5rem;
+}
+
+.a3-border {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: solid 1px white;
+    opacity: 0;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.a3-gradient {
+    position: absolute;
+    scale: 1.2;
+}
+
+.a3-g-1 {
+    top: -8rem;
+    right: 16.5rem;
+    z-index: 1;
+    opacity: 0;
+}
+
+.a3-g-2 {
+    top: -8rem;
+    right: -6.5rem;
+    opacity: 0;
+}
+
+.active-now .animation3-success-1 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-7rem, 7rem)
+}
+
+.active-now > .animation3-success-1-2 {
+    transition: linear 1s;
+    transform: translateX(5%);
+    opacity: 1;
+}
+
+
+.animation4-container {
+    rotate: 45deg;
+    padding: 2.5rem;
+    position: relative;
+    isolation: isolate;
+}
+
+.animation4-container img {
+    height: 17.5rem;
+    width: 17.5rem;
+}
+
+.a4-border {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+}
+
+.a4-border.border4-left {
+    border: 2px solid white;
+    border-width: 0 0 2px 2px;
+    bottom: 0;
+    left: 0;
+}
+
+.a4-border.border4-right {
+    border: 2px solid white;
+    border-width: 2px 2px 0 0;
+    top: 0;
+    right: 0;
+}
+
+.a4-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+}
+
+.a4-gradient-sm {
+    scale: 1.5;
+}
+
+.a4-gradient-left {
+    bottom: 0;
+    left: 0;
+    rotate: -45deg;
+}
+
+.a4-gradient-right {
+    top: 0;
+    right: 0;
+    rotate: -225deg;
+}
+
+.a4-gradient-lg {
+    scale: 2;
+}
+
+.a4-gradient-top {
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    rotate: 45deg;
+}
+
+.a4-gradient-bottom {
+    opacity: 0.5;
+    bottom: 0;
+    right: 0;
+    rotate: 225deg;
+}
+
+.active-now > .animation4-success-1 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-0.3rem, 0.3rem);
+}
+
+.active-now > .animation4-success-2 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(0.3rem, -0.3rem);
+}
+
+.active-now > .animation4-success-3 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-3rem, 0.02rem);
+}
+
+.active-now > .animation4-success-4 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-3rem, 0.02rem);
+}
+
+.active-now > .animation4-success-5 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-2rem, -0.05rem);
+}
+
+.active-now > .animation4-success-6 {
+    transition: linear 1s;
+    opacity: 1;
+    transform: translate(-2rem, -0.05rem);
+}
+
+@media only screen and (max-width: 1125px) {
+    h1, p {
+        text-align: center;
+    }
+
+
+    #we-advise, #we-build, #we-invest, #we-connect {
+        margin-bottom: 10rem;
+    }
+
+    #team-members {
+        margin-top: 20rem;
+    }
+}
+
+
+.hamburger {
+    display: none;
+}
+
+@media only screen and (max-width: 750px) {
+    .horizon-navigation-bar {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
